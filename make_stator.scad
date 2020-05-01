@@ -6,10 +6,10 @@ To generate your stator please replace the numbers below with the dimensions and
 
 pol_num = 6;	//number of stator poles
 stt_hgt = 43; //height of stator 
-stt_id = 17; //inner diameter of stators collar
-stt_od = 21; //outer diameter of stators collar
-pol_rat = .65; //determines poles length from ratio of stt_od, eg 1.4
-cap_rat = 1.4; //determines how wide each poles cap is, eg 0.1-2.0
+stt_id = 21; //inner diameter of stators collar
+stt_od = 25; //outer diameter of stators collar
+pol_rat = .3; //determines poles length from ratio of stt_od, eg 1.4
+cap_rat = 1.5; //determines how wide each poles cap is, eg 0.1-2.0
 stt_res = 400; //resolution of the cylinders making up the collar
 
 stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat,stt_res);
