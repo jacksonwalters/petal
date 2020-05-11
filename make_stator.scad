@@ -5,7 +5,7 @@ To generate your stator please replace the numbers below with the dimensions and
 */
 
 pol_num = 6;	//number of stator poles
-stt_hgt = 42.1; //height of stator 
+stt_hgt = 41.1; //height of stator 
 stt_id = 21.2; //inner diameter of stators collar
 stt_od = 25.1; //outer diameter of stators collar
 pol_rat = .25; //determines poles length from ratio of stt_od, eg 1.4
