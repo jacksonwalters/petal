@@ -266,15 +266,15 @@ Trying v4. This time, we have:
 
 \noindent v5 has height 42.1mm. \\
 
-\subsection{~7pm:} v5 finished printing. It’s still a little too big at 42.1mm. Will try 41.1mm. \\
+\subsection*{~7pm:} v5 finished printing. It’s still a little too big at 42.1mm. Will try 41.1mm. \\
 
 \noindent  v4 is printed. It measures: \\
 
 \begin{itemize}
-\item $total_diam = 34.5mm$
-\item $id = ~21.2mm$
-\item $od =  ~25.1mm$
-\item $pole_length = 2.9mm$
+\item $total\_diam = 34.5mm$
+\item $id \approx 21.2mm$
+\item $od \approx 25.1mm$
+\item $pole\_length = 2.9mm$
 \end{itemize}
 
 
@@ -291,55 +291,45 @@ Trying v4. This time, we have:
 \item number of poles = 6
 \end{itemize}
 
-$$pole_length = 2.9mm$$
-$$pole_width \approx 5mm$$
+$$pole\_length = 2.9mm$$
+$$pole\_width \approx 5mm$$
 
-$$AWG \rightarrow diam \rightarrow num_windings:$$
+$$AWG \rightarrow diam \rightarrow num\_windings:$$
 
-\begin{enumerate}
+\begin{itemize}
 \item $19 (1.8amp) \rightarrow .912mm \rightarrow 3$
 \item $20 (1.5amp) \rightarrow .812mm \rightarrow 3$
 \item $21 (1.2amp) \rightarrow .723 \rightarrow 4$
 \item $22 (.92) = .644 \rightarrow 4$
-\end{enumerate}
+\end{itemize}
 
-Example: AWG 21, 1.2amp max power transmission, .723mm, 4 windings around pole, 6 layers.
+\noindent Example: AWG 21, 1.2amp max power transmission, .723mm, 4 windings around pole, 6 layers. \\
 
-24 loops per pole.
+\noindent 24 loops per pole. \\
 
-Too hard - need to measure. At 48v, no more than 57watt.
+\noindent Too hard - need to measure. At 48v, no more than 57watt. \\
 
-\subsection{Tues. 5/12/20:} Printing v7, height = 41.3mm. v6 fit perfectly, but not snugly. need some compression.
+\subsection*{Tues. 5/12/20:} Printing v7, height = 41.3mm. v6 fit perfectly, but not snugly. need some compression. \\
 
-\subsection{Thurs. 5/14/20:} Magnets arrived yesterday. At least one set fits very nicely, no need to shave down the spindle yet, and they stick right on so no immediate need for epoxy. Going to grab some copper wire, and eventually will need to find a 48v battery.
+\subsection*{Thurs. 5/14/20:} Magnets arrived yesterday. At least one set fits very nicely, no need to shave down the spindle yet, and they stick right on so no immediate need for epoxy. Going to grab some copper wire, and eventually will need to find a 48v battery. \\
 
+\subsection*{~10pm, Thurs. 5/14/20:} Found some magnet wire at ``You-Do-It” Electronics Center in Needham. 22 gauge. Bought a multimeter, cutters, and wire strippers at Home Depot. Wound the stator core, and was able to generate a few mA of current by spinning the spindle. \\
 
+\subsection*{5/16/20:} Got a nice 30V, 5A variable Korad power supply for testing. Got 500w brushless motor spinning at 25W. \\
 
+\subsection*{~6:32pm, 5/19/20:} Got some precision files to file down the notches near the end of the stator poles a bit more to better store the windings. They weren’t quite fitting into the gap in the bearing cups between the bearing cages and the stator itself. \\
 
+\begin{itemize}
+\item First test w/ power, spinning: https://www.youtube.com/watch?v=SrjFXLMFxuI
+\item Spinning, brief: https://youtu.be/y2wRbTZY77E
+\item 500w motor w/ Korad, test: https://youtu.be/1-twHIf9ygM
+\item Generating power w/ multimeter: https://youtu.be/IRpmhwM5PVo
+\item Spinning by hand: https://youtu.be/fcTMyOD5his
+\end{itemize}
 
-\subsection{~10pm, Thurs. 5/14/20:} Found some magnet wire at “You-Do-It” Electronics Center in Needham. 22 gauge. Bought a multimeter, cutters, and wire strippers at Home Depot. Wound the stator core, and was able to generate a few mA of current by spinning the spindle.
+The motor is spinning when hooked up to the 3-phase controller. Without mounting to a cut frame or the like, the axle causes the bearing cups to spin off. There may be a pair of windings wired in the wrong direction as it’s doing some back and forth spinning. There are also no Hall sensors, which may be part of it. It is most likely just the vibration. \\
 
-
-
-
-\subsection{5/16/20:} Got a nice 30V, 5A variable Korad power supply for testing. Got 500w brushless motor spinning at 25W.
-
-
-
-\subsection{~6:32pm, 5/19/20:} Got some precision files to file down the notches near the end of the stator poles a bit more to better store the windings. They weren’t quite fitting into the gap in the bearing cups between the bearing cages and the stator itself. 
-
-First test w/ power, spinning: https://www.youtube.com/watch?v=SrjFXLMFxuI
-Spinning, brief: https://youtu.be/y2wRbTZY77E
-500w motor w/ Korad, test: https://youtu.be/1-twHIf9ygM
-Generating power w/ multimeter: https://youtu.be/IRpmhwM5PVo
-Spinning by hand: https://youtu.be/fcTMyOD5his
-
-
-
-
-The motor is spinning when hooked up to the 3-phase controller. Without mounting to a cut frame or the like, the axle causes the bearing cups to spin off. There may be a pair of windings wired in the wrong direction as it’s doing some back and forth spinning. There are also no Hall sensors, which may be part of it. It is most likely just the vibration.
-
-The bearing cups rubbing on the enamel coated magnet wire causes it to rub off a little and conduct on the metal, causing sparking. This can easily be alleviated by just filing the notches a bit more so that the stator completely encases the windings.
+The bearing cups rubbing on the enamel coated magnet wire causes it to rub off a little and conduct on the metal, causing sparking. This can easily be alleviated by just filing the notches a bit more so that the stator completely encases the windings. \\
 
 
 \end{document}
