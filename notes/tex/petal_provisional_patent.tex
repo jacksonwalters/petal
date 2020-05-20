@@ -63,102 +63,150 @@
 \begin{document}
 \maketitle
 
-\section{Notes}
-
-Petal - DIY vintage bottom bracket integrated, sensorless, brushless, DC 100-250w 6 pole stator, 4 pole rotor, mid-drive eBike motor
+\section*{Notes}
 
 
-
-Weds. 1/15/2020 (update 5/2020): Round two at AA a success - got the 500w motor running at low power, ~6w. Step 1 complete! Here’s the plan:
-
-take apart existing motor, understand how it works - DONE
-hook up oscilloscope, understand controller better - DONE
-
-learn to 3d print (tool training 3/22) - DONE 
-3d print stator model for old school bottom bracket - DONE
-
-learn to lost wax/investment cast/machine/CNC to produce metal/iron stator core
-embed/attach permanent magnets to BB spindle - DONE
-shave down spindle and use bigger, stronger magnets
-wind stator - DONE
-
-bench power supply, get spinning - DONE
-48v e-bike battery
-cut bike frame to tabletop size
-install BB motor + controller + battery
-
-test w/ cranks, *torque*
-
-install prototype e-motor on full bike
-test prototype
+\subsection*{Title \& Brief Description}
+\noindent Petal: DIY vintage bottom bracket integrated, sensorless, brushless, DC 100-250w 6 pole stator, 4 pole rotor, mid-drive eBike motor.
 
 
 
-make a few working prototypes
-hand out to others for testing/alpha
+\subsection*{Weds. 1/15/2020 (update 5/2020):} Round two at AA a success - got the 500w motor running at low power, ~6w. Step 1 complete! Here’s the plan: \\
 
-make video documenting build process
-make promo video for web
+\begin{itemize}
+\item take apart existing motor, understand how it works - DONE
+\item hook up oscilloscope, understand controller better - DONE
+\end{itemize}
 
-launch website w/ video(s)
-crowdfunding/beta
+\begin{itemize}
+\item learn to 3d print (tool training 3/22) - DONE
+\item 3d print stator model for old school bottom bracket - DONE
+\end{itemize}
 
-solicit investors
-patent
-form llc/startup
+\begin{itemize}
+\item learn to lost wax/investment cast/machine/CNC to produce metal/iron stator core
+\item embed/attach permanent magnets to BB spindle - DONE
+\item shave down spindle and use bigger, stronger magnets
+\item wind stator - DONE
+\end{itemize}
 
-refine design
-contract manufacturer
-set up direct sale on website
+\vspace{5mm}
 
-release v1
+\begin{itemize}
+\item bench power supply, get spinning - DONE
+\item 48v e-bike battery
+\item cut bike frame to tabletop size
+\item install BB motor + controller + battery
+\end{itemize}
+
+\vspace{5mm}
+
+\begin{itemize}
+\item test w/ cranks, *torque*
+\end{itemize}
+
+\vspace{5mm}
+
+\begin{itemize}
+\item install prototype e-motor on full bike
+\item test prototype
+\end{itemize}
+
+\vspace{5mm}
+
+\begin{itemize}
+\item make a few working prototypes
+\item hand out to others for testing/alpha
+\end{itemize}
+
+\vspace{5mm}
+
+\begin{itemize}
+\item make video documenting build process
+\item make promo video for web
+\end{itemize}
+
+\vspace{5mm}
+
+\begin{itemize}
+\item launch website w/ video(s)
+\item crowdfunding/beta
+\end{itemize}
+
+\vspace{5mm}
+
+\begin{itemize}
+\item solicit investors
+\item patent
+\item form llc/startup
+\end{itemize}
+
+\vspace{5mm}
+
+\begin{itemize}
+\item refine design
+\item contract manufacturer
+\item set up direct sale on website
+\end{itemize}
+
+\vspace{5mm}
+
+\begin{itemize}
+\item release v1
+\end{itemize}
+
+\subsection*{Materials Required}
+
+\begin{itemize}
+\item vintage bottom bracket w/ spindle, bearings, and cups
+\item 48v battery
+\item controller/driver
+\item 4 strong, curved magnets
+\item jb-weld epoxy
+\item stator iron (3d print mold, then lost-wax cast)
+\item copper wire
+\end{itemize}
+
+\subsection*{Implementation}
+
+\noindent SOLVED: nylon/metal washer possibly with notches for bearing cups to compress stator. or just design the stator so that it juts out enough for the bearings to compress on. need so that stator stays centered and fixed (non-rotating) \\
+
+\noindent use cable guide screw hole for wires \\
 
 
-vintage bottom bracket w/ spindle, bearings, and cups
-48v battery
-controller/driver
-4 strong, curved magnets
-jb-weld epoxy
-stator iron (3d print mold, then lost-wax cast)
-copper wire
+\subsection*{Weds. 1/22/2020:} heading to AA tonight to hook up motor to scope, possibly take apart 500w motor.
 
-SOLVED: nylon/metal washer possibly with notches for bearing cups to compress stator. or just design the stator so that it juts out enough for the bearings to compress on. need so that stator stays centered and fixed (non-rotating)
+\subsection*{Fri. 5/1/2020:} 3d printed the stator, v2. This print was successful.
 
-use cable guide screw hole for wires 
-
-https://artisansasylum.com/
-
-
-
-
-Weds. 1/22/2020: heading to AA tonight to hook up motor to scope, possibly take apart 500w motor.
-
-Fri. 5/1/2020: 3d printed the stator, v2. This print was successful.
 
 resources:
-printer = Prusa i3 MK3S
-material = prusament PLA (galaxy purple)
-amount = 16.64g
-cost = \$.42
-time = 2h12min
+\begin{itemize}
+\item printer = Prusa i3 MK3S
+\item material = prusament PLA (galaxy purple)
+\item amount = 16.64g
+\item cost = \$.42
+\item time = 2h12min
+\end{itemize}
 settings:
-slicer = PrusaSlicer
-layer height = .20mm quality
-infill = \%15
-supports = none
+\begin{itemize}
+\item slicer = PrusaSlicer
+\item layer height = .20mm quality
+\item infill = \%15
+\item supports = none
+\end{itemize}
 
 
 
 
 v2 dimensions:
-\begin{enumerate}
-\item $num poles = 6$
-\item td = total diameter - 38mm (=(1+pr)*od)
-\item od = center ring outer diameter - 21mm
-\item id = center ring inner diameter - ~17mm
-\item h = height - 43mm
-\item pr = pole ratio - .65 => pole length ~ 6.5mm (= pr*(od/2) )
-\end{enumerate}
+\begin{itemize}
+\item $num\_poles$ = 6
+\item $td$ = total diameter - 38mm ($=(1+pr)*od$)
+\item $od$ = center ring outer diameter - 21mm
+\item $id$ = center ring inner diameter - ~17mm
+\item $h$ = height - 43mm
+\item $pr$ = pole ratio - .65 $\Rightarrow$ pole length $\approx$ 6.5mm ($= pr*(od/2)$ )
+\end{itemize}
 
 
 
@@ -166,94 +214,85 @@ Pretty damn close to the specifications for the generated object file.
 
 For v3, I’ll need to have the inner diameter wide enough to fit over the races of the spindle.
 
-vintage bottom bracket dimensions:
-center length = 43.5mm (bottom groove to bottom groove. ~45mm race to race)
-spindle diameter = 16.5mm
-square taper (small) = 13mm
-square taper (large) = 14mm
-race diameter = 21mm
+\begin{itemize}
+\item vintage bottom bracket dimensions:
+\item center length = 43.5mm (bottom groove to bottom groove. ~45mm race to race)
+\item spindle diameter = 16.5mm
+\item square taper (small) = 13mm
+\item square taper (large) = 14mm
+\item race diameter = 21mm
+\end{itemize}
 
 standard bottom tube dimensions:
 inner diameter = 34mm
 
-
-
 v3 dimensions:
-\begin{enumerate}
-\item $num_poles = 6$
+\begin{itemize}
+\item num\_poles = 6
 \item td = total diameter - 34mm
 \item od = center ring outer diameter - 21mm
 \item id = center ring inner diameter - ~17mm
 \item h = height - 43mm
 \item pr = pole ratio - .65 => pole length ~ 6.5mm (= pr*(od/2) )
-\end{enumerate}
+\end{itemize}
 
-~5:45pm: In progress.
+\subsection*{~5:45pm: In progress.}
 
 Printed successfully. With the inner diameter exactly matching the bearing race diameter, it was remarkably tight. With a lot of force and some time, I was able to get it past. It may make sense to leave it that small with a little internal sanding or something, but I’d prefer .1mm on each side and just have an inner diameter that’s .2mm bigger.
 
-
-
-Sun. 5/10/20, ~8:30pm:
+\subsection*{Sun. 5/10/20, ~8:30pm:}
 
 Trying v4. This time, we have:
 
-\begin{enumerate}
-\item $pole_num=6$
-\item $id=21.2mm$
-\item $od=25.2mm$
-\item $height=43mm$
-\item $pol_ratio=.25$
-\item $cap_ratio=1.5$
-\item $resolution=400$
-\end{enumerate}
+\begin{itemize}
+\item $pole\_num$ =6
+\item $id$=21.2mm
+\item $od$=25.2mm
+\item $height$ =43mm
+\item $pol\_ratio$ =.25
+\item $cap\_ratio$ =1.5
+\item $resolution$ =400
+\end{itemize}
 
-I noticed that a problem I thought I have is not a problem. When I go to wrap the copper windings, it will bulge out a little on the sides, 1-3mm. I thought I might have to shave the stator height from 43mm to 40mm to compensate. However, there is a nice 3-4mm gap on either side between the bearing cage and the end of the cup.
+\noindent I noticed that a problem I thought I have is not a problem. When I go to wrap the copper windings, it will bulge out a little on the sides, 1-3mm. I thought I might have to shave the stator height from 43mm to 40mm to compensate. However, there is a nice 3-4mm gap on either side between the bearing cage and the end of the cup. \\
 
+\noindent Printing v4. Added a brim, turned the $bed_temp$ up to 70c, and turned the speed down on the first few layers. Making sure to have good adhesion. \\
 
+\noindent v4 printing successfully, will take 1h3m, 15.95g. PLA @ $24.99/kg = $0.40. \\
 
+\noindent Mon. 5/11/20: Realized that, with the bearing cups and cages, the available length for the stator ‘height’ is really 42mm, not 43mm. It may be that you can compress the stator, but probably only .2mm or so, which would allow for a nice snug fit. \\
 
+\noindent Ordered some neodymium arc magnets from Apex Magnets. \\
 
-Printing v4. Added a brim, turned the $bed_temp$ up to 70c, and turned the speed down on the first few layers. Making sure to have good adhesion.
+\noindent v5 has height 42.1mm. \\
 
-v4 printing successfully, will take 1h3m, 15.95g. PLA @ $24.99/kg = $0.40.
+\subsection{~7pm:} v5 finished printing. It’s still a little too big at 42.1mm. Will try 41.1mm. \\
 
-Mon. 5/11/20: Realized that, with the bearing cups and cages, the available length for the stator ‘height’ is really 42mm, not 43mm. It may be that you can compress the stator, but probably only .2mm or so, which would allow for a nice snug fit.
+\noindent  v4 is printed. It measures: \\
 
-Ordered some neodymium arc magnets from https://www.apexmagnets.com/.
-
-v5 has height 42.1mm.
-
-~7pm: v5 finished printing. It’s still a little too big at 42.1mm. Will try 41.1mm.
-
-
-
-
-V4 is printed. It measures:
-
-\begin{enumerate}
+\begin{itemize}
 \item $total_diam = 34.5mm$
 \item $id = ~21.2mm$
 \item $od =  ~25.1mm$
 \item $pole_length = 2.9mm$
-\end{enumerate}
+\end{itemize}
 
 
-Calculations:
+\noindent Calculations: \\
 
-Would like to calculate power. Need to know:
+\noindent Would like to calculate power. Need to know: \\
 
-\begin{enumerate}
-\item $wire gauge$
-\item $number of windings$
-\item $current$
-\item $strength of magnets$
-\item $geometry of setup$
-\item $number of poles = 6$
-\end{enumerate}
+\begin{itemize}
+\item wire gauge
+\item number of winding
+\item current
+\item strength of magnets
+\item geometry of setup
+\item number of poles = 6
+\end{itemize}
 
 $$pole_length = 2.9mm$$
-$$pole_width ~ 5mm$$
+$$pole_width \approx 5mm$$
 
 $$AWG \rightarrow diam \rightarrow num_windings:$$
 
