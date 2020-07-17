@@ -68,7 +68,7 @@ module pole (pol_hgt, stm_lgt, stm_wdt, cap_lgt, cap_wdt,) {
 			cube ([stm_lgt, stm_wdt, pol_hgt], center = true);
 		}
 		translate ([stm_lgt + cap_lgt / 2, 0, 0]) {
-			cube ([cap_lgt, cap_wdt, pol_hgt],center = true);
+			cube ([cap_lgt, cap_wdt, pol_hgt], center = true);
 		}
 	}
 }
