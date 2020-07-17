@@ -56,21 +56,20 @@ module collar (col_hgt, col_id, col_od, col_res) {
 
 difference () {
 		cylinder (col_hgt, col_od/2, col_od/2, $fn = col_res, center = true);
-		translate ([0,0,col_hgt * 0.4]) {
-			cylinder (col_hgt * 2, col_id/2, col_id/2, $fn = col_res, center = true);
+		translate ([0,0,col_hgt*0.4]) {
+			cylinder (col_hgt*2, col_id/2, col_id/2, $fn = col_res, center = true);
 		}
-
 	}
 }
 
 module pole (pol_hgt, stm_lgt, stm_wdt, cap_lgt, cap_wdt,) {
 	union () {
-		translate ([stm_lgt / 2, 0, 0]) {
+		translate ([stm_lgt/2, 0, 0]) {
 			cube ([stm_lgt, stm_wdt, pol_hgt], center = true);
 		}
-			translate ([stm_lgt + cap_lgt / 2, 0, 0]) {
-				cube ([cap_lgt, cap_wdt, pol_hgt],center = true);
-			}
+		translate ([stm_lgt + cap_lgt / 2, 0, 0]) {
+			cube ([cap_lgt, cap_wdt, pol_hgt],center = true);
+		}
 	}
 }
 
