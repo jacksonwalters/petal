@@ -54,53 +54,39 @@ ______________________________________________________________
 
 module collar (col_hgt, col_id, col_od, col_res) {
 
-	difference () {
-//color ("purple")
+difference () {
 		cylinder (col_hgt, col_od/2, col_od/2, $fn = col_res, center = true);
 		translate ([0,0,col_hgt * 0.4]) {
-//color ("darkgreen")
 			cylinder (col_hgt * 2, col_id/2, col_id/2, $fn = col_res, center = true);
 		}
 
 	}
-	
 }
-
-
 
 module pole (pol_hgt, stm_lgt, stm_wdt, cap_lgt, cap_wdt,) {
 	union () {
 		translate ([stm_lgt / 2, 0, 0]) {
-//color ("darkblue")
 			cube ([stm_lgt, stm_wdt, pol_hgt], center = true);
 		}
 			translate ([stm_lgt + cap_lgt / 2, 0, 0]) {
-//color ("darkred")
 				cube ([cap_lgt, cap_wdt, pol_hgt],center = true);
 			}
 	}
 }
 
-
-
-
-
 module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
 	intersection () {
 		union () {
-// color ("red")
 			collar (stt_hgt, stt_id, stt_od, stt_res);
 			for (i=[0:pol_num]) {
 				rotate (i * 360 / pol_num) {
 					translate ([(stt_od/2) * 0.98, 0, 0]) {
-// color ("blue")
 						pole (stt_hgt, (stt_od/2) * pol_rat, (stt_od/2) - (stt_id/2), (stt_od/2) - (stt_id/2), (stt_od/2 + ((stt_od/2) * pol_rat) + (stt_od/2) - (stt_id/2)) * 3.14 / pol_num * cap_rat);
 					}
 				}
 			}
 		}
-// color ("gray")
-			cylinder (stt_hgt, ((stt_od/2) + ((stt_od/2) * pol_rat) + (stt_od/2) - (stt_id/2)) * 0.98, ((stt_od/2) + ((stt_od/2) * pol_rat) + (stt_od/2) - (stt_id/2)) * 0.98, center = true, $fn = stt_res);
+            cylinder (stt_hgt, ((stt_od/2) + ((stt_od/2) * pol_rat) + (stt_od/2) - (stt_id/2)) * 0.98, ((stt_od/2) + ((stt_od/2) * pol_rat) + (stt_od/2) - (stt_id/2)) * 0.98, center = true, $fn = stt_res);
 	}
 }
 
@@ -109,4 +95,4 @@ module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
 
 //collar (20, 40, 60, 200);
 //pole (20, 40, 20, 20, 60);
-//stator (6, 1, 22, 30, 1.2, 1.4, 200);
+stator (6, 30, 22, 30, 1.2, 1.4, 200);
