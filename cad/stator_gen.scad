@@ -6,16 +6,6 @@ Jackson Walters, adapted from r0gueSch0lar.
 A stator is the union of six T-shapes (perp. rec. prisms) and a central collar
 (symmetric diff. of two cyls.) intersected with a large cylinder.
 
-This module takes seven parameters:
-
-pol_num = number of poles on stator.
-stt_hgt = height of stator laying flat.
-stt_ir = inner radius of stator's collar.
-stt_or = outer radius of stator's collar.
-pol_rat = determines poles length from ratio of stt_or, eg 1.4
-cap_rat = determines how wide each poles cap is, eg 0.1-2.0
-stat_res = resolution of the cylinders making up the collar.
-
 */
 
 pi=3.1415926535897932384626433;
@@ -76,9 +66,17 @@ module stator (pol_num, stt_hgt, stt_ir, stt_or, pol_rat, cap_rat, stt_res) {
 	}
 }
 
-// debugging
+/*
+This module takes seven parameters:
 
+pol_num = number of poles on stator.
+stt_hgt = height of stator laying flat.
+stt_ir = inner radius of stator's collar.
+stt_or = outer radius of stator's collar.
+pol_rat = determines poles length from ratio of stt_or, eg 1.4
+cap_rat = determines how wide each poles cap is, eg 0.1-2.0
+stat_res = resolution of the cylinders making up the collar.
 
-//collar (20, 40, 60, 200);
-//pole (20, 40, 20, 20, 60);
-stator (6, 40, 22.2, 25, .3, 1.5, 200);
+*/
+
+stator(6, 40, 22.2, 25, .3, 1.5, 200);
