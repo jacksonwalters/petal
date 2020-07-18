@@ -10,9 +10,9 @@ This module takes seven parameters:
 
 pol_num = number of poles on stator.
 stt_hgt = height of stator laying flat.
-stt_id = inner diameter of stator's collar.
-stt_od = outer diameter of stator's collar.
-pol_rat = determines poles length from ratio of stt_od, eg 1.4
+stt_ir = inner radius of stator's collar.
+stt_or = outer radius of stator's collar.
+pol_rat = determines poles length from ratio of stt_or, eg 1.4
 cap_rat = determines how wide each poles cap is, eg 0.1-2.0
 stat_res = resolution of the cylinders making up the collar.
 
@@ -42,13 +42,13 @@ module pole (pol_hgt, stm_lgt, stm_wdt, cap_lgt, cap_wdt,) {
 }
 
 /* intersect the union of a collar & six poles with a large cylinder */
-module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
+module stator (pol_num, stt_hgt, stt_ir, stt_or, pol_rat, cap_rat, stt_res) {
     /* thickness is difference of stator outer and inner diam */
-    thickness = stt_od - stt_id;
-    pol_stm_len=stt_od*pol_rat; /* pole stem length is relative to stator outer diam */
+    thickness = stt_or - stt_ir;
+    pol_stm_len = stt_or*pol_rat; /* pole stem length is relative to stator outer diam */
     
     /* radius of large cylinder */
-    cyl_rad = pol_stm_len + stt_od + thickness;
+    cyl_rad = pol_stm_len + stt_or + thickness;
     
     /*pole params */
     pol_stm_wdt=thickness; /* pole stem width is same as collar thickness */
@@ -58,14 +58,14 @@ module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
     intersection () {
 		/* union of six T-shapes (two perp. rec. prisms) and collar */
         union () {
-            /*collar of height=stt_hgt, inner diam=stt_id, outer diam=stt_od*/
-			collar (stt_hgt,stt_id,stt_od,stt_res);
+            /*collar of height=stt_hgt, inner diam=stt_ir, outer diam=stt_or*/
+			collar (stt_hgt,stt_ir,stt_or,stt_res);
             
             /*six "T" shaped poles*/
 			for (i=[0:pol_num]) {
                 /* rotate by 2pi/n where n is number of poles */
 				rotate(i*(360/pol_num) ){
-					translate ([stt_od*0.98, 0, 0]) {
+					translate ([stt_or*0.98, 0, 0]) {
                         pole (stt_hgt, pol_stm_len, pol_stm_wdt, pol_cap_lgt, pol_cap_wdt);
 					}
 				}
