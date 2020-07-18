@@ -27,7 +27,7 @@ module collar (col_hgt, col_id, col_od, col_res) {
 	}
 }
 
-/*two perpendicular rectangular prisms - a 3d "T" shape*/
+/*two perpendicular rectangular prisms, stem & cap - a "T" shape*/
 module pole (pol_hgt, stm_lgt, stm_wdt, cap_lgt, cap_wdt,) {
 	union () {
 		translate ([stm_lgt/2, 0, 0]) {
@@ -44,13 +44,16 @@ module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
     /*radius of large cylinder*/
     cyl_rad = stt_od*(2+pol_rat) - stt_id;
     intersection () {
-		/* union of six T-shapes (two perp. rec. prisms) */
+		/* union of six T-shapes (two perp. rec. prisms) and collar */
         union () {
+            /*collar of height=stt_hgt, inner diam=stt_id, outer diam=stt_od*/
 			collar (stt_hgt,stt_id,stt_od,stt_res);
+            
+            /*six "T" shaped poles*/
 			for (i=[0:pol_num]) {
 				rotate(i*(360/pol_num) ){
 					translate ([stt_od*0.98, 0, 0]) {
-						pole (stt_hgt, stt_od*pol_rat,stt_od-stt_id,stt_od-stt_id, cyl_rad*pi/pol_num * cap_rat);
+						pole (stt_hgt, stt_od*pol_rat,stt_od-stt_id,stt_od-stt_id, (cyl_rad*pi/pol_num)*cap_rat);
 					}
 				}
 			}
@@ -65,4 +68,4 @@ module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
 
 //collar (20, 40, 60, 200);
 //pole (20, 40, 20, 20, 60);
-stator (6, 40, 22.2, 32, 1.2, 1.4, 200);
+stator (6, 40, 22.2, 25, .3, 1.5, 200);
