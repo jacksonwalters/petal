@@ -53,7 +53,7 @@ module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
     /*pole params */
     pol_stm_wdt=thickness; /* pole stem width is same as collar thickness */
     pol_cap_lgt=thickness; /* pole cap length is same as collar thickness */
-    pol_cap_wdt=(cyl_rad*pi/pol_num)*cap_rat; /*pole cap width is ... */
+    pol_cap_wdt=(cyl_rad*pi/pol_num)*cap_rat; /* pole cap width is just arc length of big cyl times a ratio */
     
     intersection () {
 		/* union of six T-shapes (two perp. rec. prisms) and collar */
