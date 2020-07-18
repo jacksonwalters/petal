@@ -7,4 +7,4 @@ The .scad files are from r0gueSch0lar. A stator is defined by at most six parame
 
 .stl files are generated with OpenSCAD.
 
-The .gcode files are generated with PrusaSlicer.
+The .gcode files are generated with PrusaSlicer or eiger.io.
