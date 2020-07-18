@@ -1,4 +1,4 @@
-include <stat_gen.scad>
+include <stator_gen.scad>
 
 /*
 To generate your stator please replace the numbers below with the dimensions and measurements you need or copy and paste the module at the bottom without the "//".
