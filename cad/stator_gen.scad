@@ -16,6 +16,7 @@ stat_res = resolution of the cylinders making up the collar.
 
 */
 
+pi=3.1415926535897932384626433;
 
 /*symmetric difference of two cylinders - a thick washer*/
 module collar (col_hgt, col_id, col_od, col_res) {
@@ -40,6 +41,7 @@ module pole (pol_hgt, stm_lgt, stm_wdt, cap_lgt, cap_wdt,) {
 
 /*intersect the union of a collar & six poles with a large cylinder*/
 module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
+    cyl_rad = stt_od + stt_od*pol_rat + stt_od - stt_id;
     intersection () {
 		/* union of six T-shapes (two perp. rec. prisms) */
         union () {
@@ -47,13 +49,13 @@ module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
 			for (i=[0:pol_num]) {
 				rotate(i*360/pol_num){
 					translate ([stt_od*0.98, 0, 0]) {
-						pole (stt_hgt, stt_od*pol_rat,stt_od-stt_id,stt_od-stt_id, (stt_od + stt_od*pol_rat + stt_od - stt_id)*3.14159/pol_num * cap_rat);
+						pole (stt_hgt, stt_od*pol_rat,stt_od-stt_id,stt_od-stt_id, cyl_rad*pi/pol_num * cap_rat);
 					}
 				}
 			}
 		}
         /*large cylinder*/
-        cylinder (stt_hgt, (stt_od + stt_od*pol_rat + stt_od - stt_id)*0.98, (stt_od + stt_od*pol_rat + stt_od - stt_id) * 0.98, center = true, $fn = stt_res);
+        cylinder (stt_hgt, cyl_rad*.98, cyl_rad*.98, center = true, $fn = stt_res);
 	}
 }
 
@@ -62,4 +64,4 @@ module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
 
 //collar (20, 40, 60, 200);
 //pole (20, 40, 20, 20, 60);
-stator (6, 30, 22, 30, 1.2, 1.4, 200);
+stator (6, 40, 22, 30, 1.2, 1.4, 200);
