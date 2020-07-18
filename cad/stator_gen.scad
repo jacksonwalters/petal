@@ -43,8 +43,18 @@ module pole (pol_hgt, stm_lgt, stm_wdt, cap_lgt, cap_wdt,) {
 
 /* intersect the union of a collar & six poles with a large cylinder */
 module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
+    /* thickness is difference of stator outer and inner diam */
+    thickness = stt_od - stt_id;
+    pol_stm_len=stt_od*pol_rat; /* pole stem length is relative to stator outer diam */
+    
     /* radius of large cylinder */
-    cyl_rad = stt_od*(2+pol_rat) - stt_id;
+    cyl_rad = pol_stm_len + stt_od + thickness;
+    
+    /*pole params */
+    pol_stm_wdt=thickness; /* pole stem width is same as collar thickness */
+    pol_cap_lgt=thickness; /* pole cap length is same as collar thickness */
+    pol_cap_wdt=(cyl_rad*pi/pol_num)*cap_rat; /*pole cap width is ... */
+    
     intersection () {
 		/* union of six T-shapes (two perp. rec. prisms) and collar */
         union () {
@@ -56,13 +66,6 @@ module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
                 /* rotate by 2pi/n where n is number of poles */
 				rotate(i*(360/pol_num) ){
 					translate ([stt_od*0.98, 0, 0]) {
-                        /*pole params */
-                        pol_stm_len=stt_od*pol_rat; /* pole stem length is relative to stator outer diam */
-                        pol_stm_wdt=stt_od-stt_id; /* pole stem width is same as collar thickness */
-                        
-                        pol_cap_lgt=stt_od-stt_id; /* pole cap length is same as collar thickness */
-                        pol_cap_wdt=(cyl_rad*pi/pol_num)*cap_rat; /*pole cap width is ... */
-						
                         pole (stt_hgt, pol_stm_len, pol_stm_wdt, pol_cap_lgt, pol_cap_wdt);
 					}
 				}
