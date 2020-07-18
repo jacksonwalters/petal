@@ -1,5 +1,5 @@
 /* STATOR GENERATOR, 2020
-Jackson Walters, adapted from work of r0gueSch0lar.
+Jackson Walters, adapted from r0gueSch0lar.
 
 A stator is the union of six T-shapes (perp. rec. prisms) and a central collar
 (symmetric diff. of two cyls.) intersected with a large cylinder.
@@ -48,7 +48,7 @@ module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
         union () {
 			collar (stt_hgt,stt_id,stt_od,stt_res);
 			for (i=[0:pol_num]) {
-				rotate(i*360/pol_num){
+				rotate(i*(360/pol_num) ){
 					translate ([stt_od*0.98, 0, 0]) {
 						pole (stt_hgt, stt_od*pol_rat,stt_od-stt_id,stt_od-stt_id, cyl_rad*pi/pol_num * cap_rat);
 					}
@@ -65,4 +65,4 @@ module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
 
 //collar (20, 40, 60, 200);
 //pole (20, 40, 20, 20, 60);
-stator (6, 40, 22, 30, 1.2, 1.4, 200);
+stator (6, 40, 22.2, 32, 1.2, 1.4, 200);
