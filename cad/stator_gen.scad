@@ -53,13 +53,17 @@ module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
             
             /*six "T" shaped poles*/
 			for (i=[0:pol_num]) {
+                /* rotate by 2pi/n where n is number of poles */
 				rotate(i*(360/pol_num) ){
 					translate ([stt_od*0.98, 0, 0]) {
+                        /*pole params */
                         pol_stm_len=stt_od*pol_rat; /* pole stem length is relative to stator outer diam */
                         pol_stm_wdt=stt_od-stt_id; /* pole stem width is same as collar thickness */
+                        
                         pol_cap_lgt=stt_od-stt_id; /* pole cap length is same as collar thickness */
                         pol_cap_wdt=(cyl_rad*pi/pol_num)*cap_rat; /*pole cap width is ... */
-						pole (stt_hgt, pol_stm_len, pol_stm_wdt, pol_cap_lgt, pol_cap_wdt);
+						
+                        pole (stt_hgt, pol_stm_len, pol_stm_wdt, pol_cap_lgt, pol_cap_wdt);
 					}
 				}
 			}
