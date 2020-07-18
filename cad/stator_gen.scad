@@ -41,7 +41,8 @@ module pole (pol_hgt, stm_lgt, stm_wdt, cap_lgt, cap_wdt,) {
 
 /*intersect the union of a collar & six poles with a large cylinder*/
 module stator (pol_num, stt_hgt, stt_id, stt_od, pol_rat, cap_rat, stt_res) {
-    cyl_rad = stt_od + stt_od*pol_rat + stt_od - stt_id;
+    /*radius of large cylinder*/
+    cyl_rad = stt_od*(2+pol_rat) - stt_id;
     intersection () {
 		/* union of six T-shapes (two perp. rec. prisms) */
         union () {
