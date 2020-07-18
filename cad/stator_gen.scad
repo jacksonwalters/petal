@@ -79,4 +79,4 @@ stat_res = resolution of the cylinders making up the collar.
 
 */
 
-stator(6, 40, 22.2, 25, .3, 1.5, 200);
+stator(6, 41.3, 10.6, 12.55, .20, 1.5, 200);
